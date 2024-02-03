@@ -6,3 +6,6 @@ for numero in range(5) :
         break
     else:
         print("No se encontro")
+
+for letra in "Ultimate python" :
+    print( letra )
