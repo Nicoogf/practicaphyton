@@ -12,9 +12,9 @@ usuarios = [
 ]
 
 
-def ordena(elemento):
-    return elemento[1]
+# def ordena(elemento):
+#     return elemento[1]
 
 
-usuarios.sort(key=ordena , reverse=True)
+usuarios.sort(key=lambda el:el[1])
 print(usuarios)
