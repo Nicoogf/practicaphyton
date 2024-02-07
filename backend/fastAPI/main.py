@@ -13,6 +13,3 @@ async def root():
 async def url():
     return {"url_curso": "https://mouredev.com/python"}
 
-@app.post("/create")
-async def create():
-    return
