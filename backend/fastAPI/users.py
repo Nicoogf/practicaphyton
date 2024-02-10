@@ -1,5 +1,5 @@
 """Users"""
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 # uvicorn users:app --reload
@@ -65,12 +65,13 @@ async def user(id: int):
     return search_user(id)
 
 
-@app.post("/user/")
+@app.post("/user/", status_code=201)
 async def user(user: User):
-    if type(search_user(user.id)) == user:
-        return {"error": "El usuario ya existe"}
-    else:
-        users_list.append(user)
+    if type(search_user(user.id)) == User:
+       raise HTTPException(status_code=404, detail="El usuario ya existe")
+
+    users_list.append(user)
+    return user
 
 
 @app.put("/user/")
@@ -90,15 +91,15 @@ async def user(user: User):
 
 
 @app.delete("/user/{id}")
-async def user(id: int):
-    
+async def userDelete(id: int):
+
     found = False
     for index, saved_user in enumerate(users_list):
         if saved_user.id == id:
             del users_list[index]
             found = True
-    if not found :
-      return {"error": "No se actualizo el usuario"}
+    if not found:
+        return {"error": "No se actualizo el usuario"}
 
 
 def search_user(id: int):
