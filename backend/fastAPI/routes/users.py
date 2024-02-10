@@ -1,14 +1,20 @@
 """Users"""
-from fastapi import FastAPI, HTTPException
+
+# pylint: disable=missing-function-docstring
+
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 # uvicorn users:app --reload
-app = FastAPI()
+router = APIRouter()
 
 # Entidad User
 
 
 class User(BaseModel):
+    """
+    Clase tipo Usuario
+    """
     id: int
     name: str
     surname: str
@@ -25,7 +31,7 @@ users_list = [
 ]
 
 
-@app.get("/usersjson")
+@router.get("/usersjson")
 async def usersjson():
     return [
         {
@@ -50,32 +56,44 @@ async def usersjson():
     ]
 
 
-@app.get("/users")
-async def users():
+@router.get("/users")
+async def users_get():
+    """
+    Obtiene la lista de usuarios.
+    """
     return users_list
 
 
-@app.get("/user/{id}")
-async def user(id: int):
-    return search_user(id)
+@router.get("/user/{id}")
+async def user_get(user_id: int):
+    """
+    Informacion sobre un solo usuario
+    """
+    return search_user(user_id)
 
 
-@app.get("/user")
-async def user(id: int):
-    return search_user(id)
+@router.get("/user")
+async def user_gets(user_id: int):
+    """
+    Informacion sobre un solo usuario
+    """
+    return search_user(user_id)
 
 
-@app.post("/user/", status_code=201)
-async def user(user: User):
-    if type(search_user(user.id)) == User:
-       raise HTTPException(status_code=404, detail="El usuario ya existe")
+@router.post("/user/", response_model=User, status_code=201)
+async def user_post(user: User):
+    """
+    Agregar usuario
+    """
+    if isinstance(search_user(user.id), User):
+        raise HTTPException(status_code=404, detail="El usuario ya existe")
 
     users_list.append(user)
     return user
 
 
-@app.put("/user/")
-async def user(user: User):
+@router.put("/user/")
+async def user_put(user: User):
 
     found = False
 
@@ -90,21 +108,21 @@ async def user(user: User):
         return user
 
 
-@app.delete("/user/{id}")
-async def userDelete(id: int):
+@router.delete("/user/{id}")
+async def user_delete(ide: int):
 
     found = False
     for index, saved_user in enumerate(users_list):
-        if saved_user.id == id:
+        if saved_user.id == ide:
             del users_list[index]
             found = True
     if not found:
         return {"error": "No se actualizo el usuario"}
 
 
-def search_user(id: int):
-    users = filter(lambda user: user.id == id, users_list)
+def search_user(ide: int):
+    users = filter(lambda user: user.id == ide, users_list)
     try:
         return list(users)[0]
-    except:
+    except IndexError:
         return {"error": "Usuario no encontrado"}
