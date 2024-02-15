@@ -54,3 +54,10 @@ print(language_slide)
 
 languaje_reversed = language[::-1]
 print(languaje_reversed)
+
+#Funciones
+
+
+
+print(language.isnumeric())
+print(language.upper().isupper())
