@@ -30,7 +30,7 @@ edad = 32
 print("Mi nombre es Brais Moure y tengo 32 años")
 
 print("Mi nombre es {} {} y mi edad  es {}".format(nombre,apellido,edad))
-print("Mi nombre es %s %s y mi edad  es %d" %( nombre ,apellido ,edad ))
+print("Mi nombre es %s %s y mi edad  es %d" %( apellido ,  nombre ,edad ))
 
 print("Mi nombre es %s mi apellido es %s y tengo la edad de %d" %(nombre,apellido,edad))
 
@@ -42,3 +42,15 @@ print(f"mi nombre es {nombre} {apellido}  y tengo {edad}")
 language = "Python"
 a , b ,c ,d, e ,f= language
 print(a ,b ,c,e,f)
+
+
+#Division
+
+language_slide = language[-2]
+
+print(language_slide)
+
+#reverse 
+
+languaje_reversed = language[::-1]
+print(languaje_reversed)
