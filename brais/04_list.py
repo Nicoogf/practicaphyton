@@ -31,13 +31,14 @@ print(my_list + my_other_list)
 print(my_list)
 print(type(my_list))
 
-my_list.append("hola")
-my_list.insert(2 , "Chau")
 
 
 
+my_new_list= my_list.copy()
+my_list.clear()
+print(my_new_list)
+my_new_list.reverse()
+print(my_new_list)
 
-
-
-
-print(my_list)
+my_new_list.sort()
+print(my_new_list)
