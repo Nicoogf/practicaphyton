@@ -40,3 +40,15 @@ print(my_dict)
 print("Nombre" in my_dict)
 print("Brais" in my_dict)
 #print("Moure" in my_dict)
+print(my_dict.items())
+print(my_dict.keys())
+print(my_dict.values())
+print(my_dict.fromkeys(("nombre" , 1 )))
+
+my_list_= ["Nombre" , 1 , "Piso"]
+
+my_new_dict = my_dict.fromkeys((my_list_))
+
+print(my_new_dict)
+
+print(list(my_new_dict.values()))
