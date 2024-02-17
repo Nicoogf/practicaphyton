@@ -19,5 +19,5 @@ print("La ejecucion continua")
 
 my_string = "mi cadena de texto"
 
-if my_string:
+if not my_string:
     print("Mi cadena de texto no es vacia")
