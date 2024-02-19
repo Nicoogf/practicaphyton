@@ -7,11 +7,15 @@ class MyEmptyPersona :
 print(MyEmptyPersona())
 
 class Persona : 
-    def __init__(self , nombre , apellido):
-        self.nombre  = nombre
-        self.apellido = apellido
+    def __init__(self , nombre , apellido , alias = "Sin alias"):
+        self.fullname = f"{nombre} {apellido}  {alias}"
 
+    def walk(self):
+        print(f"{self.fullname}Esta caminando")
 
 myPerson = Persona("Brais" , "Moure")
 
-print(myPerson.nombre)
+myPerson.walk()
+
+myOtherPerson =Persona("Nicolas" ,"Falabella" ,"NicoDev")
+myOtherPerson.walk()
