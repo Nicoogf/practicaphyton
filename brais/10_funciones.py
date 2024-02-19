@@ -36,7 +36,8 @@ def print_name_with_default ( nombre , apellido , alias="Sin Alias Registrado" )
 print_name_with_default("Nicolas" ,"Falabella" )
 
 
-def print_text(*text) :
-    print(text)
+def print_upper_texts(*texts) :
+    for text in texts:
+        print(text.upper())
 
-print_text("hola","mundo")
+print_upper_texts("hola","mundo")
