@@ -22,22 +22,20 @@
 #     print(f"{condicion} Mi condicion es menor s 20")
 
 
-
-my_list = [35,24,62,52,30,30,17]
+my_list = [35, 24, 62, 52, 30, 30, 17]
 
 my_dict = {
-        "Nombre" : "Brais" , 
-        "Apellido" : "Moure" , 
-        "Edad" : 35 , 
-        "Lenguajes": {"Python" , "Swift" , "Kotlin"},
-        1 : 1.77
-    }
+    "Nombre": "Brais",
+    "Apellido": "Moure",
+    "Edad": 35,
+    "Lenguajes": {"Python", "Swift", "Kotlin"},
+    1: 1.77
+}
 
 
-for element in my_dict :
+for element in my_dict:
     print(element)
-    if element == "Edad" :
-        break
-    print("Se ejecuta")
-else :
+    if element == "Edad":
+        continue
+else:
     print("El bucle for para diccionario finalizo")
