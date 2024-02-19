@@ -15,8 +15,28 @@ sum_two_values( 6 , 4.2 )
 
 
 def sum_two_values_with_return ( first_value:int , second_value:int) :
-    return first_value + second_value
+    my_sum =first_value + second_value
+    return my_sum
 
 resultado = sum_two_values_with_return(10 , 5 )
 
 print(resultado)
+
+
+
+def print_name (nombre , apellido ) :
+    print(f"Se creo el nombre {nombre} {apellido}")
+    
+print_name(apellido="Falabella" , nombre="Nicolas" )
+
+
+def print_name_with_default ( nombre , apellido , alias="Sin Alias Registrado" ):
+    print(f"Se cargo el nombre {nombre} {apellido} {alias}")
+
+print_name_with_default("Nicolas" ,"Falabella" )
+
+
+def print_text(*text) :
+    print(text)
+
+print_text("hola","mundo")
