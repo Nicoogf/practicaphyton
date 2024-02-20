@@ -12,4 +12,5 @@ except ValueError:
     print("Se ha producido un error ValueError")
 except TypeError as error :
     print(f"Se ha producido un error TypeError {error}")
-
+except Exception as error:
+    print(error)
