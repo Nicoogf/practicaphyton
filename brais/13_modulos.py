@@ -1,11 +1,12 @@
 
 """Modulos"""
 from modules import sum , printValue
-import math
+from math import pi as PI_VALUE
 
 
 sum(5,3,1)
 printValue("HOLAAAA")
 
 
-math.
+print(PI_VALUE)
+print(pow(2,8))
