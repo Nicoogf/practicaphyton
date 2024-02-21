@@ -33,16 +33,74 @@
 # print(sorted(student_tuples, key=lambda x:x[2] , reverse=True))
 
 
-def fibonacci () :
+# def fibonacci () :
 
-    prev = 0
-    next = 1
-    
-    for index in range(1,51):
-        print(f"Posicion {index} : {prev}")
-        fib = prev + next
-        prev =  next
-        next = fib
-        
+#     prev = 0
+#     next = 1
 
-fibonacci()
+#     for index in range(1,51):
+#         print(f"Posicion {index} : {prev}")
+#         fib = prev + next
+#         prev =  next
+#         next = fib
+
+
+# fibonacci()
+
+
+# def is_primo ( number ) :
+#     if number < 2 :
+#         return False
+#     for index in range(2,number):
+#         if number % index == 0:
+#             return False
+
+#     return True
+
+# print(is_primo(4))
+
+
+# def FizzBuzz () :
+#     for index in range(0, 101) :
+#         if index % 3 == 0 and index % 5 == 0 :
+#             print(f"El numero {index} es FizzBuzz")
+#         elif index % 3 == 0 :
+#             print(f"El numero {index} es Fizz")
+#         elif index % 5 == 0 :
+#             print(f"El numero {index} es Buzz")
+#         else:
+#             print(f"El numero {index}")
+
+# FizzBuzz()
+
+
+# def es_anagrama( palabraUno, palabraDos ) :
+#     if palabraUno == palabraDos :
+#         return False
+#     return sorted(palabraUno.lower()) == sorted(palabraDos.lower())
+
+# print(es_anagrama("culo" ,"olu"))
+
+
+# def fibonacci() :
+#     prev = 0
+#     next = 1
+#     for index in range(0 , 50):
+#         print( prev )
+#         fib = prev + next
+#         prev = next
+#         next = fib
+
+# fibonacci()
+
+
+def es_primo(numero):
+    if numero < 2:
+        return False
+    for index in range(2, numero):
+        if numero % index == 0:
+            return False
+    return True
+
+
+print(es_primo(4))
