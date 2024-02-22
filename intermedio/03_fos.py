@@ -25,3 +25,22 @@ def sum_ten(original_value):
 add_closure = sum_ten(1)
 print(add_closure(5))
 print(sum_ten(5)(1))
+
+
+numbers = [ 2 , 5, 10, 21 ,3 ,30]
+
+def mutiply_two(number):
+    return number * 2
+
+print(list(map( mutiply_two , numbers  )))
+print(list(map( lambda number: number * 2 , numbers  )))
+
+
+#filter
+
+def filter_greater_ten( number ) :
+    if number > 10 :
+        return True
+    return False
+
+print(list(filter( filter_greater_ten , numbers)))
