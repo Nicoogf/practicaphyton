@@ -1,28 +1,59 @@
 """Errores"""
 
-#SyntaxError
+# SyntaxError
 # print "Hola Comunidad"
-print ("Hola Comunidad")
+import math
+print("Hola Comunidad")
 
-#NameErrors
+# NameErrors
 languaje = "spanish"
-print( languaje )
+print(languaje)
 
 
-#indexError 
-my_list = ["Python" , "Swift" , "Kotlin" , "Dart" , "Javascript"]
+# indexError
+my_list = ["Python", "Swift", "Kotlin", "Dart", "Javascript"]
 # print(my_list[5])
 
 
-#ModulenotFound Errors
+# ModulenotFound Errors
 
 # import maths
-import math
 
 
-#AtributteError
+# AtributteError
 
 # print(math.PI)
 print(math.pi)
 
-#keyError
+# keyError
+
+my_dict = {
+    "Nombre": "Brais",
+    "Apellido": "Moure",
+    "Edad": 35,
+    "Lenguajes": {"Python", "Swift", "Kotlin"},
+    1: "Python"
+}
+
+print(my_dict["Edad"])
+
+
+
+
+
+
+#TypeError
+# print(my_list["Nombre"])
+
+
+#ImportError
+# from math import PI
+from math import pi as PI
+
+#valueError
+# my_int = int("10 años")
+# print(type(my_int))
+
+
+#ZerodivisionError
+print(1 /0 )
