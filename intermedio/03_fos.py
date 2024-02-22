@@ -1,4 +1,5 @@
 """Funciones orden superior"""
+from functools import reduce
 
 def sum_one( valor ):
     return valor + 1
@@ -43,4 +44,11 @@ def filter_greater_ten( number ) :
         return True
     return False
 
-print(list(filter( filter_greater_ten , numbers)))
+print(list(filter( lambda number : number > 10 , numbers)))
+
+
+#reduce
+def sum_two_values( first , second  ) :
+    return first + second 
+
+print(reduce(sum_two_values , numbers))
