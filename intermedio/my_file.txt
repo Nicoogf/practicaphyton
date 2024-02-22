@@ -1,4 +1,2 @@
-Mi nombre es Brais
-Mi Apellido es Moure
-Tengo 35 años
-Soy developer
+Creacion del archivo base
+Nueva Linea de comando
