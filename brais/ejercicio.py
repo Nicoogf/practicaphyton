@@ -94,13 +94,14 @@
 # fibonacci()
 
 
-def es_primo(numero):
-    if numero < 2:
-        return False
-    for index in range(2, numero):
-        if numero % index == 0:
+def es_primo():
+    for numero in range(1,101):
+        if numero < 2:
             return False
-    return True
+        for index in range(2, numero):
+            if numero % index == 0:
+                return False
+        return True
 
 
-print(es_primo(4))
+print(es_primo())
